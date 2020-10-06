@@ -25,7 +25,7 @@ class UserRequest:NSObject {
         AF.request(urlString, method: .post, parameters: parameters)
             .redirect(using: redirect)
             .cURLDescription{ description in
-              print(description)
+//              print(description)
             }.responseData { response in
 //                print(response)
                 switch response.result {

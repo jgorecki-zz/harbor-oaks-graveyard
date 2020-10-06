@@ -22,15 +22,13 @@ class ScoreRequest:NSObject {
     let username:String = keychain.get("username")!
     let apikey:String = keychain.get("apikey")!
     
-    let urlString:String = "http://127.0.0.1:8000/api/v1/score/"
+    let urlString:String = "http://127.0.0.1:8000/api/v1/score/post/"
         
     let redirect:Redirector = Redirector(behavior: .follow)
 
-    let parameters = ["score":score]
+    let parameters = ["score":score!]
     let headers:HTTPHeaders = [
       "Authorization": "ApiKey \(username):\(apikey)",
-//      "Content-Type": "application/json",
-//      "Accept": "application/json"
     ]
     AF.request(urlString, method: .post, parameters: parameters, headers: headers)
         .redirect(using: redirect)

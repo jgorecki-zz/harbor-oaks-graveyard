@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-    let _ = UserHelper()
+    let userhelper:UserHelper = UserHelper()
+    userhelper.create()
     
     return true
   }

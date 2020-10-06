@@ -30,14 +30,16 @@ init(location:CLLocation!, completion:@escaping (Any)->Void){
   let redirect:Redirector = Redirector(behavior: .follow)
 
   //[{"key":"Authorization","value":"ApiKey jgorecki:sdnxcnsfgnfgnfngsfdgmhg","description":"","enabled":true}]
-  let parameters:Parameters = ["latitude":latitude, "longitude":longitude]
+//  let parameters:Parameters = ["latitude":latitude, "longitude":longitude]
+  let parameters:Parameters = [:]
+
   let headers:HTTPHeaders = [
     "Authorization": "ApiKey \(username):\(apikey)",
 //    "Content-Type": "application/json",
 //    "Accept": "application/json"
   ]
   
-  AF.request(urlString, method: .post, parameters: parameters, headers: headers)
+  AF.request(urlString, method: .get, parameters: parameters, encoding:URLEncoding.queryString, headers: headers)
   .redirect(using: redirect)
   .cURLDescription{ description in
     print(description)
