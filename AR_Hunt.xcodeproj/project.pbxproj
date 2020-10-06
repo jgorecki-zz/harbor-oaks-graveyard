@@ -22,6 +22,8 @@
 		FF36653E252A27F100B84789 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FF36653D252A27F100B84789 /* Kingfisher */; };
 		FF366541252A288000B84789 /* MonsterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF366540252A288000B84789 /* MonsterRequest.swift */; };
 		FF366544252A288600B84789 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF366543252A288600B84789 /* Monster.swift */; };
+		FF882D62252BFAB500E861A4 /* GraveyardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */; };
+		FF882D65252BFC1700E861A4 /* ScoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D64252BFC1700E861A4 /* ScoreRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		8FB21D9E1E164F3B00B3E330 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		FF366540252A288000B84789 /* MonsterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterRequest.swift; sourceTree = "<group>"; };
 		FF366543252A288600B84789 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveyardViewController.swift; sourceTree = "<group>"; };
+		FF882D64252BFC1700E861A4 /* ScoreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,22 +80,48 @@
 		8FB21D791E13C34900B3E330 /* AR_Hunt */ = {
 			isa = PBXGroup;
 			children = (
-				FF366543252A288600B84789 /* Monster.swift */,
-				FF366540252A288000B84789 /* MonsterRequest.swift */,
 				8FB21D7A1E13C34900B3E330 /* AppDelegate.swift */,
-				8FB21D8E1E13C39F00B3E330 /* MapViewController.swift */,
-				8FB21D9E1E164F3B00B3E330 /* MapAnnotation.swift */,
-				8FB21D7C1E13C34900B3E330 /* ViewController.swift */,
-				8FB21D9C1E164DE500B3E330 /* ARItem.swift */,
+				8FB21D831E13C34900B3E330 /* LaunchScreen.storyboard */,
 				8FB21D7E1E13C34900B3E330 /* Main.storyboard */,
+				FF882D69252BFC4600E861A4 /* Models */,
+				FF882D67252BFC2100E861A4 /* Requests */,
+				FF882D6B252C012A00E861A4 /* ViewControllers */,
 				8FB21D8C1E13C35700B3E330 /* art.scnassets */,
 				8FB21D811E13C34900B3E330 /* Assets.xcassets */,
-				8FB21D831E13C34900B3E330 /* LaunchScreen.storyboard */,
 				8FB21D941E13DEA200B3E330 /* Fireball.scnp */,
 				8FB21D951E13DEA200B3E330 /* spark.png */,
 				8FB21D861E13C34900B3E330 /* Info.plist */,
 			);
 			path = AR_Hunt;
+			sourceTree = "<group>";
+		};
+		FF882D67252BFC2100E861A4 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				FF366540252A288000B84789 /* MonsterRequest.swift */,
+				FF882D64252BFC1700E861A4 /* ScoreRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		FF882D69252BFC4600E861A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8FB21D9E1E164F3B00B3E330 /* MapAnnotation.swift */,
+				8FB21D9C1E164DE500B3E330 /* ARItem.swift */,
+				FF366543252A288600B84789 /* Monster.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF882D6B252C012A00E861A4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8FB21D8E1E13C39F00B3E330 /* MapViewController.swift */,
+				8FB21D7C1E13C34900B3E330 /* ViewController.swift */,
+				FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,8 +212,10 @@
 				8FB21D7D1E13C34900B3E330 /* ViewController.swift in Sources */,
 				8FB21D9F1E164F3B00B3E330 /* MapAnnotation.swift in Sources */,
 				FF366544252A288600B84789 /* Monster.swift in Sources */,
+				FF882D62252BFAB500E861A4 /* GraveyardViewController.swift in Sources */,
 				8FB21D9D1E164DE500B3E330 /* ARItem.swift in Sources */,
 				8FB21D8F1E13C39F00B3E330 /* MapViewController.swift in Sources */,
+				FF882D65252BFC1700E861A4 /* ScoreRequest.swift in Sources */,
 				8FB21D7B1E13C34900B3E330 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.harbordev.AR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -351,6 +384,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.harbordev.AR;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
