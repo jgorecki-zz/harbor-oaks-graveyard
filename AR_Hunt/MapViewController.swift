@@ -40,36 +40,54 @@ class MapViewController: UIViewController {
     if CLLocationManager.authorizationStatus() == .notDetermined {
       locationManager.requestWhenInUseAuthorization()
     }
-    setupLocations()
   }
-  
-  func setupLocations() {
-    let firstTarget = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 50.5184, longitude: 8.3902), itemNode: nil)
-    targets.append(firstTarget)
-    
-    let secondTarget = ARItem(itemDescription: "wolf", location: CLLocation(latitude: 50.5184, longitude: 8.3895), itemNode: nil)
-    targets.append(secondTarget)
-    
-    let thirdTarget = ARItem(itemDescription: "dragon", location: CLLocation(latitude: 50.5181, longitude: 8.3882), itemNode: nil)
-    targets.append(thirdTarget)
-    
-    for item in targets {
-      let annotation = MapAnnotation(location: item.location.coordinate, item: item)
-      self.mapView.addAnnotation(annotation)
-    }
-  }
+
 }
 
 extension MapViewController: MKMapViewDelegate {
+  
   func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+    
     self.userLocation = userLocation.location
+    
+    let _:MonsterRequest=MonsterRequest(location: self.userLocation) { [weak self] results in
+
+      guard let strongSelf = self else {return}
+      
+      let monsters:Monster = results as! Monster
+      
+      let formatter = NumberFormatter()
+      formatter.generatesDecimalNumbers = true
+      formatter.numberStyle = .decimal
+
+      for monster in monsters.objects {
+
+        let a_latitude:Double = formatter.number(from: monster.latitude)?.doubleValue ?? 0.0
+        let a_longitude:Double = formatter.number(from: monster.longitude)?.doubleValue ?? 0.0
+                
+        let location:CLLocation = CLLocation(latitude: a_latitude, longitude: a_longitude)
+        
+        let creature = ARItem(itemDescription: monster.monster, location: location, itemNode: nil)
+        let annotation = MapAnnotation(location: creature.location.coordinate, item: creature)
+        
+        
+        
+        strongSelf.mapView.addAnnotation(annotation)
+        
+      }
+    
+    }
+    
   }
   
   func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    
     let coordinate = view.annotation!.coordinate
     
     if let userCoordinate = userLocation {
+      
       if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 50 {
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let viewController = storyboard.instantiateViewController(withIdentifier: "ARViewController") as? ViewController {
@@ -91,12 +109,16 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController: ViewControllerDelegate {
   func viewController(controller: ViewController, tappedTarget: ARItem) {
-    self.dismiss(animated: true, completion: nil)
-    let index = self.targets.firstIndex(where: {$0.itemDescription == tappedTarget.itemDescription})
-    self.targets.remove(at: index!)
     
-    if selectedAnnotation != nil {
-      mapView.removeAnnotation(selectedAnnotation!)
+    DispatchQueue.main.async{ [self] in
+      self.dismiss(animated: true, completion: nil)
+      let index = self.targets.firstIndex(where: {$0.itemDescription == tappedTarget.itemDescription})
+      self.targets.remove(at: index!)
+    
+      if selectedAnnotation != nil {
+        self.mapView.removeAnnotation(selectedAnnotation!)
+      }
     }
+      
   }
 }

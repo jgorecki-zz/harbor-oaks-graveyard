@@ -172,11 +172,11 @@ class ViewController: UIViewController {
   }
 
   func setupTarget() {
-    let scene = SCNScene(named: "art.scnassets/\(target.itemDescription).dae")
+    let scene = SCNScene(named: "art.scnassets/\(target.itemDescription).usdz")
     let enemy = scene?.rootNode.childNode(withName: target.itemDescription, recursively: true)
     
-    if target.itemDescription == "dragon" {
-      enemy?.position = SCNVector3(x: 0, y: -15, z: 0)
+    if target.itemDescription == "DeadTree" {
+      enemy?.position = SCNVector3(x: 5, y: -10, z: 0)
     } else {
       enemy?.position = SCNVector3(x: 0, y: 0, z: 0)
     }
