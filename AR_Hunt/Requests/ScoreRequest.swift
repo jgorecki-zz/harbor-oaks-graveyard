@@ -10,38 +10,34 @@ import Foundation
 import Alamofire
 import UIKit
 import CoreLocation
+import KeychainSwift
 
 class ScoreRequest:NSObject {
     
   init(score:Int!, completion:@escaping (Any)->Void){
           
-    let urlString:String = "https://harbor-oaks-graveyard-cms.herokuapp.com/api/v1/score/"
+    super.init()
+    
+    let keychain:KeychainSwift = KeychainSwift()
+    let username:String = keychain.get("username")!
+    let apikey:String = keychain.get("apikey")!
+    
+    let urlString:String = "http://127.0.0.1:8000/api/v1/score/"
         
-        super.init()
-        
-        let redirect:Redirector = Redirector(behavior: .follow)
+    let redirect:Redirector = Redirector(behavior: .follow)
 
-        let parameters = ["score":score]
-        
-        AF.request(urlString, method: .post, parameters: parameters)
-            .authenticate(username: "graveyard.harbordev.com", password: "not-needed-yet")
-            .redirect(using: redirect)
-            .cURLDescription{ description in
-                print(description)
-            }.responseData { response in
-                print(response)
-    //            switch response.result {
-    //            case .success(let json):
-    //                do {
-    //                    let decoder:JSONDecoder = JSONDecoder()
-    //                    let monsters = try decoder.decode(Monster.self, from: json)
-    //                    completion(monsters)
-    //                }catch let error{
-    //                    print(error)
-    //                }
-    //            case .failure(let error):
-    //                print(error)
-    //            }
+    let parameters = ["score":score]
+    let headers:HTTPHeaders = [
+      "Authorization": "ApiKey \(username):\(apikey)",
+//      "Content-Type": "application/json",
+//      "Accept": "application/json"
+    ]
+    AF.request(urlString, method: .post, parameters: parameters, headers: headers)
+        .redirect(using: redirect)
+        .cURLDescription{ description in
+            print(description)
+        }.responseData { response in
+            print(response)
         }
     }
     

@@ -10,41 +10,52 @@ import Foundation
 import Alamofire
 import UIKit
 import CoreLocation
+import KeychainSwift
 
 class MonsterRequest:NSObject {
     
-    init(location:CLLocation!, completion:@escaping (Any)->Void){
-        
-        let coordinates:CLLocationCoordinate2D = location.coordinate
-        let latitude:Double = coordinates.latitude
-        let longitude:Double = coordinates.longitude
-        
-        let urlString:String = "https://harbor-oaks-graveyard-cms.herokuapp.com/api/v1/monster/"
-        
-        super.init()
-        
-        let redirect:Redirector = Redirector(behavior: .follow)
+init(location:CLLocation!, completion:@escaping (Any)->Void){
+    
+  super.init()
+  
+  let coordinates:CLLocationCoordinate2D = location.coordinate
+  let latitude:Double = coordinates.latitude
+  let longitude:Double = coordinates.longitude
+  let keychain:KeychainSwift = KeychainSwift()
+  let username:String = keychain.get("username")!
+  let apikey:String = keychain.get("apikey")!
 
-        AF.request(urlString)
-        .authenticate(username: "graveyard.harbordev.com", password: "not-needed-yet")
-        .redirect(using: redirect)
-        .cURLDescription{ description in
-            print(description)
-        }.responseData { response in
-            print(response)
-            switch response.result {
-            case .success(let json):
-                do {
-                    let decoder:JSONDecoder = JSONDecoder()
-                    let monsters = try decoder.decode(Monster.self, from: json)
-                    completion(monsters)
-                }catch let error{
-                    print(error)
-                }
-            case .failure(let error):
-                print(error)
-            }
+  let urlString:String = "http://127.0.0.1:8000/api/v1/monster/"
+
+  let redirect:Redirector = Redirector(behavior: .follow)
+
+  //[{"key":"Authorization","value":"ApiKey jgorecki:sdnxcnsfgnfgnfngsfdgmhg","description":"","enabled":true}]
+  let parameters:Parameters = ["latitude":latitude, "longitude":longitude]
+  let headers:HTTPHeaders = [
+    "Authorization": "ApiKey \(username):\(apikey)",
+//    "Content-Type": "application/json",
+//    "Accept": "application/json"
+  ]
+  
+  AF.request(urlString, method: .post, parameters: parameters, headers: headers)
+  .redirect(using: redirect)
+  .cURLDescription{ description in
+    print(description)
+  }.responseData { response in
+    print(response)
+    switch response.result {
+    case .success(let json):
+        do {
+            let decoder:JSONDecoder = JSONDecoder()
+            let monsters = try decoder.decode(Monster.self, from: json)
+            completion(monsters)
+        }catch let error{
+            print(error)
         }
+    case .failure(let error):
+        print(error)
     }
+  }
+}
     
 }

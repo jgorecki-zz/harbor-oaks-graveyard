@@ -36,33 +36,31 @@ extension MapViewController: MKMapViewDelegate {
     
     self.userLocation = userLocation.location
     
-    let _:MonsterRequest = MonsterRequest(location: self.userLocation) { [weak self] results in
-
-      guard let strongSelf = self else {return}
-      
-      let monsters:Monster = results as! Monster
-      
-      let formatter = NumberFormatter()
-      formatter.generatesDecimalNumbers = true
-      formatter.numberStyle = .decimal
-
-      for monster in monsters.objects {
-
-        let a_latitude:Double = formatter.number(from: monster.latitude)?.doubleValue ?? 0.0
-        let a_longitude:Double = formatter.number(from: monster.longitude)?.doubleValue ?? 0.0
-                
-        let location:CLLocation = CLLocation(latitude: a_latitude, longitude: a_longitude)
-        
-        let creature = ARItem(itemDescription: monster.monster, location: location, itemNode: nil)
-        let annotation = MapAnnotation(location: creature.location.coordinate, item: creature)
-        
-        
-        
-        strongSelf.mapView.addAnnotation(annotation)
-        
-      }
-    
-    }
+//    let _:MonsterRequest = MonsterRequest(location: self.userLocation) { [weak self] results in
+//
+//      guard let strongSelf = self else {return}
+//      
+//      let monsters:Monster = results as! Monster
+//      
+//      let formatter = NumberFormatter()
+//      formatter.generatesDecimalNumbers = true
+//      formatter.numberStyle = .decimal
+//
+//      for monster in monsters.objects {
+//
+//        let a_latitude:Double = formatter.number(from: monster.latitude)?.doubleValue ?? 0.0
+//        let a_longitude:Double = formatter.number(from: monster.longitude)?.doubleValue ?? 0.0
+//                
+//        let location:CLLocation = CLLocation(latitude: a_latitude, longitude: a_longitude)
+//        
+//        let creature = ARItem(itemDescription: monster.monster, location: location, itemNode: nil)
+//        let annotation = MapAnnotation(location: creature.location.coordinate, item: creature)
+//      
+//        strongSelf.mapView.addAnnotation(annotation)
+//        
+//      }
+//    
+//    }
     
   }
   

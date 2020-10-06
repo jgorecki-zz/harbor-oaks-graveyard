@@ -24,6 +24,11 @@
 		FF366544252A288600B84789 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF366543252A288600B84789 /* Monster.swift */; };
 		FF882D62252BFAB500E861A4 /* GraveyardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */; };
 		FF882D65252BFC1700E861A4 /* ScoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D64252BFC1700E861A4 /* ScoreRequest.swift */; };
+		FF882D70252C96D200E861A4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D6F252C96D200E861A4 /* SettingsViewController.swift */; };
+		FFD2C980252C9C580062A2AE /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2C97F252C9C580062A2AE /* UserRequest.swift */; };
+		FFD2C984252CA3120062A2AE /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFD2C983252CA3120062A2AE /* KeychainSwift */; };
+		FFD2C987252CB15D0062A2AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2C986252CB15D0062A2AE /* User.swift */; };
+		FFD2C98B252CCA260062A2AE /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2C98A252CCA260062A2AE /* UserHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,10 @@
 		FF366543252A288600B84789 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveyardViewController.swift; sourceTree = "<group>"; };
 		FF882D64252BFC1700E861A4 /* ScoreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRequest.swift; sourceTree = "<group>"; };
+		FF882D6F252C96D200E861A4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FFD2C97F252C9C580062A2AE /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
+		FFD2C986252CB15D0062A2AE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FFD2C98A252CCA260062A2AE /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFD2C984252CA3120062A2AE /* KeychainSwift in Frameworks */,
 				FF36653E252A27F100B84789 /* Kingfisher in Frameworks */,
 				FF36653A252A278100B84789 /* Alamofire in Frameworks */,
 			);
@@ -80,6 +90,7 @@
 		8FB21D791E13C34900B3E330 /* AR_Hunt */ = {
 			isa = PBXGroup;
 			children = (
+				FFD2C989252CCA090062A2AE /* Helpers */,
 				8FB21D7A1E13C34900B3E330 /* AppDelegate.swift */,
 				8FB21D831E13C34900B3E330 /* LaunchScreen.storyboard */,
 				8FB21D7E1E13C34900B3E330 /* Main.storyboard */,
@@ -99,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				FF366540252A288000B84789 /* MonsterRequest.swift */,
+				FFD2C97F252C9C580062A2AE /* UserRequest.swift */,
 				FF882D64252BFC1700E861A4 /* ScoreRequest.swift */,
 			);
 			path = Requests;
@@ -110,6 +122,7 @@
 				8FB21D9E1E164F3B00B3E330 /* MapAnnotation.swift */,
 				8FB21D9C1E164DE500B3E330 /* ARItem.swift */,
 				FF366543252A288600B84789 /* Monster.swift */,
+				FFD2C986252CB15D0062A2AE /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,11 +130,20 @@
 		FF882D6B252C012A00E861A4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FF882D6F252C96D200E861A4 /* SettingsViewController.swift */,
 				8FB21D8E1E13C39F00B3E330 /* MapViewController.swift */,
 				8FB21D7C1E13C34900B3E330 /* ViewController.swift */,
 				FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FFD2C989252CCA090062A2AE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FFD2C98A252CCA260062A2AE /* UserHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +165,7 @@
 			packageProductDependencies = (
 				FF366539252A278100B84789 /* Alamofire */,
 				FF36653D252A27F100B84789 /* Kingfisher */,
+				FFD2C983252CA3120062A2AE /* KeychainSwift */,
 			);
 			productName = AR_Hunt;
 			productReference = 8FB21D771E13C34900B3E330 /* AR_Hunt.app */;
@@ -177,6 +200,7 @@
 			packageReferences = (
 				FF366538252A278100B84789 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				FF36653C252A27F100B84789 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				FFD2C982252CA3120062A2AE /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 8FB21D781E13C34900B3E330 /* Products */;
 			projectDirPath = "";
@@ -210,10 +234,14 @@
 			files = (
 				FF366541252A288000B84789 /* MonsterRequest.swift in Sources */,
 				8FB21D7D1E13C34900B3E330 /* ViewController.swift in Sources */,
+				FFD2C980252C9C580062A2AE /* UserRequest.swift in Sources */,
 				8FB21D9F1E164F3B00B3E330 /* MapAnnotation.swift in Sources */,
+				FF882D70252C96D200E861A4 /* SettingsViewController.swift in Sources */,
 				FF366544252A288600B84789 /* Monster.swift in Sources */,
 				FF882D62252BFAB500E861A4 /* GraveyardViewController.swift in Sources */,
+				FFD2C98B252CCA260062A2AE /* UserHelper.swift in Sources */,
 				8FB21D9D1E164DE500B3E330 /* ARItem.swift in Sources */,
+				FFD2C987252CB15D0062A2AE /* User.swift in Sources */,
 				8FB21D8F1E13C39F00B3E330 /* MapViewController.swift in Sources */,
 				FF882D65252BFC1700E861A4 /* ScoreRequest.swift in Sources */,
 				8FB21D7B1E13C34900B3E330 /* AppDelegate.swift in Sources */,
@@ -428,6 +456,14 @@
 				minimumVersion = 5.15.5;
 			};
 		};
+		FFD2C982252CA3120062A2AE /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -440,6 +476,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF36653C252A27F100B84789 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		FFD2C983252CA3120062A2AE /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFD2C982252CA3120062A2AE /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
