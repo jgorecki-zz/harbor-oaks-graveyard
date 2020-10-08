@@ -8,6 +8,8 @@
 
 import UIKit
 import KeychainSwift
+import AVKit
+import AVFoundation
 
 class SettingsViewController: UIViewController, UITextInputDelegate {
 
@@ -41,12 +43,33 @@ class SettingsViewController: UIViewController, UITextInputDelegate {
     usernameLabel.resignFirstResponder()
     passwordLabel.resignFirstResponder()
     
-    let _:UserRequest = UserRequest(username: usernameLabel.text, password: passwordLabel.text) { [weak self] response in
+    if (usernameLabel.text != nil) && (passwordLabel.text != nil){
+    
+//    let _:UserRequest = UserRequest(username: usernameLabel.text, password: passwordLabel.text) { [weak self] response in
+//
+//        guard let strongSelf = self else {return}
+//
+//        strongSelf.mapFormToKeychain()
+//
+//      }
       
-      guard let strongSelf = self else {return}
-
-      strongSelf.mapFormToKeychain()
-      
+    }
+    
+  }
+  
+  @IBAction func jumpScareTest(_ sender: Any) {
+  
+    let video = Bundle.main.path(forResource: "example", ofType: "mp4")!
+    print(video)
+    let videoURL = URL(fileURLWithPath: video)
+    let player = AVPlayer(url: videoURL)
+    
+    let playerViewController = AVPlayerViewController()
+    playerViewController.player = player
+    playerViewController.showsPlaybackControls = false
+    
+    self.present(playerViewController, animated: false) {
+        playerViewController.player!.play()
     }
     
   }

@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let userhelper:UserHelper = UserHelper()
     userhelper.create()
     
+    UITabBarController.appearance().barTintColor = .black
+    
     return true
   }
   

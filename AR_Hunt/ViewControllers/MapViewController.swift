@@ -9,14 +9,17 @@
 import UIKit
 import MapKit
 import CoreLocation
+import AVFoundation
 
 class MapViewController: UIViewController {
 
   @IBOutlet weak var mapView: MKMapView!
+  
   var targets = [ARItem]()
   let locationManager = CLLocationManager()
   var userLocation: CLLocation?
   var selectedAnnotation: MKAnnotation?
+  var audioPlayer = AVAudioPlayer()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,7 +30,23 @@ class MapViewController: UIViewController {
       locationManager.requestWhenInUseAuthorization()
     }
   }
-
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(true)
+    playSoundTrack()
+  }
+  
+  func playSoundTrack() {
+    let sound = Bundle.main.path(forResource: "DarkAmbience", ofType: "mp3")
+    do {
+      audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+      audioPlayer.play()
+      audioPlayer.numberOfLoops = -1
+    }catch{
+      print(error)
+    }
+  }
+  
 }
 
 extension MapViewController: MKMapViewDelegate {

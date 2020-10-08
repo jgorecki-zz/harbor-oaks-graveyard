@@ -130,14 +130,6 @@
             </objects>
             <point key="canvasLocation" x="1418" y="139"/>
         </scene>
-        <!--AV Player View Controller-->
-        <scene sceneID="YW6-NO-hzj">
-            <objects>
-                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="Jjs-Xi-iIr" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dMo-gH-cRN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1417" y="929"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qkP-Pv-Bin">
             <objects>
@@ -211,6 +203,14 @@
                                 <connections>
                                     <action selector="didPressRecreate:" destination="S8j-KT-V7w" eventType="touchUpInside" id="vyv-ju-zYS"/>
                                     <action selector="didPressSave:" destination="S8j-KT-V7w" eventType="touchUpInside" id="IhK-Pg-aJ9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dq-v0-v5n">
+                                <rect key="frame" x="170" y="490" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="DEV"/>
+                                <connections>
+                                    <action selector="jumpScareTest:" destination="S8j-KT-V7w" eventType="touchUpInside" id="cH9-dW-Hyh"/>
                                 </connections>
                             </button>
                         </subviews>

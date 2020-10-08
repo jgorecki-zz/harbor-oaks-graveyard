@@ -22,6 +22,8 @@
 		FF36653E252A27F100B84789 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FF36653D252A27F100B84789 /* Kingfisher */; };
 		FF366541252A288000B84789 /* MonsterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF366540252A288000B84789 /* MonsterRequest.swift */; };
 		FF366544252A288600B84789 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF366543252A288600B84789 /* Monster.swift */; };
+		FF55E4AF252D3107006F378B /* DarkAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF55E4AE252D3107006F378B /* DarkAmbience.mp3 */; };
+		FF55E4B7252D3917006F378B /* example.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FF55E4B5252D3678006F378B /* example.mp4 */; };
 		FF882D62252BFAB500E861A4 /* GraveyardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */; };
 		FF882D65252BFC1700E861A4 /* ScoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D64252BFC1700E861A4 /* ScoreRequest.swift */; };
 		FF882D70252C96D200E861A4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D6F252C96D200E861A4 /* SettingsViewController.swift */; };
@@ -47,6 +49,8 @@
 		8FB21D9E1E164F3B00B3E330 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		FF366540252A288000B84789 /* MonsterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterRequest.swift; sourceTree = "<group>"; };
 		FF366543252A288600B84789 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
+		FF55E4AE252D3107006F378B /* DarkAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DarkAmbience.mp3; sourceTree = "<group>"; };
+		FF55E4B5252D3678006F378B /* example.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example.mp4; sourceTree = "<group>"; };
 		FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveyardViewController.swift; sourceTree = "<group>"; };
 		FF882D64252BFC1700E861A4 /* ScoreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRequest.swift; sourceTree = "<group>"; };
 		FF882D6F252C96D200E861A4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -90,10 +94,11 @@
 		8FB21D791E13C34900B3E330 /* AR_Hunt */ = {
 			isa = PBXGroup;
 			children = (
-				FFD2C989252CCA090062A2AE /* Helpers */,
 				8FB21D7A1E13C34900B3E330 /* AppDelegate.swift */,
 				8FB21D831E13C34900B3E330 /* LaunchScreen.storyboard */,
 				8FB21D7E1E13C34900B3E330 /* Main.storyboard */,
+				FF55E4AD252D30D5006F378B /* Sounds */,
+				FFD2C989252CCA090062A2AE /* Helpers */,
 				FF882D69252BFC4600E861A4 /* Models */,
 				FF882D67252BFC2100E861A4 /* Requests */,
 				FF882D6B252C012A00E861A4 /* ViewControllers */,
@@ -104,6 +109,15 @@
 				8FB21D861E13C34900B3E330 /* Info.plist */,
 			);
 			path = AR_Hunt;
+			sourceTree = "<group>";
+		};
+		FF55E4AD252D30D5006F378B /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				FF55E4B5252D3678006F378B /* example.mp4 */,
+				FF55E4AE252D3107006F378B /* DarkAmbience.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 		FF882D67252BFC2100E861A4 /* Requests */ = {
@@ -220,7 +234,9 @@
 				8FB21D971E13DEA200B3E330 /* spark.png in Resources */,
 				8FB21D8D1E13C35700B3E330 /* art.scnassets in Resources */,
 				8FB21D821E13C34900B3E330 /* Assets.xcassets in Resources */,
+				FF55E4AF252D3107006F378B /* DarkAmbience.mp3 in Resources */,
 				8FB21D801E13C34900B3E330 /* Main.storyboard in Resources */,
+				FF55E4B7252D3917006F378B /* example.mp4 in Resources */,
 				8FB21D961E13DEA200B3E330 /* Fireball.scnp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
