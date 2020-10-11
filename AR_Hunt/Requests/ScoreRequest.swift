@@ -22,7 +22,7 @@ class ScoreRequest:NSObject {
     let username:String = keychain.get("username")!
     let apikey:String = keychain.get("apikey")!
     
-    let urlString:String = "http://127.0.0.1:8000/api/v1/score/post/"
+    let urlString:String = "https://harbor-oaks-graveyard-cms.herokuapp.com/api/v1/score/post/"
         
     let redirect:Redirector = Redirector(behavior: .follow)
 

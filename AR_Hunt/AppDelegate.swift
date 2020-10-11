@@ -27,14 +27,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   
-  
-  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     let userhelper:UserHelper = UserHelper()
     userhelper.create()
     
-    UITabBarController.appearance().barTintColor = .black
+    UITabBar.appearance().barTintColor = .black
+    
+    let rect = CGRect(x: 0.0, y: 0.0, width: 1.0, height: 1.0)
+    UIGraphicsBeginImageContext(rect.size)
+    let context = UIGraphicsGetCurrentContext()
+    let color = UIColor.lightGray
+    context?.setFillColor(color.cgColor)
+    context?.fill(rect)
+
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    UIButton.appearance().tintColor = .darkGray
+    UIButton.appearance().setTitleColor(.darkText, for: .normal)
+    UIButton.appearance().setBackgroundImage(image, for: .normal)
     
     return true
   }

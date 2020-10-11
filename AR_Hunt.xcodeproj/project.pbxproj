@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		8FB21D7B1E13C34900B3E330 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB21D7A1E13C34900B3E330 /* AppDelegate.swift */; };
-		8FB21D7D1E13C34900B3E330 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB21D7C1E13C34900B3E330 /* ViewController.swift */; };
 		8FB21D801E13C34900B3E330 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FB21D7E1E13C34900B3E330 /* Main.storyboard */; };
 		8FB21D821E13C34900B3E330 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FB21D811E13C34900B3E330 /* Assets.xcassets */; };
 		8FB21D851E13C34900B3E330 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FB21D831E13C34900B3E330 /* LaunchScreen.storyboard */; };
-		8FB21D8D1E13C35700B3E330 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FB21D8C1E13C35700B3E330 /* art.scnassets */; };
 		8FB21D8F1E13C39F00B3E330 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB21D8E1E13C39F00B3E330 /* MapViewController.swift */; };
 		8FB21D961E13DEA200B3E330 /* Fireball.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 8FB21D941E13DEA200B3E330 /* Fireball.scnp */; };
 		8FB21D971E13DEA200B3E330 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FB21D951E13DEA200B3E330 /* spark.png */; };
 		8FB21D9D1E164DE500B3E330 /* ARItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB21D9C1E164DE500B3E330 /* ARItem.swift */; };
 		8FB21D9F1E164F3B00B3E330 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FB21D9E1E164F3B00B3E330 /* MapAnnotation.swift */; };
+		FF1A49B4252FC501001F6D95 /* scare.MOV in Resources */ = {isa = PBXBuildFile; fileRef = FF1A49B3252FC501001F6D95 /* scare.MOV */; };
+		FF1A49B8252FDD27001F6D95 /* Ghost.sks in Resources */ = {isa = PBXBuildFile; fileRef = FF1A49B7252FDD27001F6D95 /* Ghost.sks */; };
+		FF1A49BB252FDDE1001F6D95 /* Ghost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A49BA252FDDE1001F6D95 /* Ghost.swift */; };
+		FF1A49BE252FDEB5001F6D95 /* GhostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1A49BD252FDEB5001F6D95 /* GhostViewController.swift */; };
+		FF1A49C4252FE167001F6D95 /* GhostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1A49C3252FE167001F6D95 /* GhostViewController.xib */; };
+		FF1A49C7252FE2B6001F6D95 /* ghost.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF1A49C6252FE2B6001F6D95 /* ghost.mp3 */; };
+		FF1A49CA252FE344001F6D95 /* scream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF1A49C9252FE344001F6D95 /* scream.mp3 */; };
 		FF36653A252A278100B84789 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = FF366539252A278100B84789 /* Alamofire */; };
 		FF36653E252A27F100B84789 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FF36653D252A27F100B84789 /* Kingfisher */; };
 		FF366541252A288000B84789 /* MonsterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF366540252A288000B84789 /* MonsterRequest.swift */; };
 		FF366544252A288600B84789 /* Monster.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF366543252A288600B84789 /* Monster.swift */; };
 		FF55E4AF252D3107006F378B /* DarkAmbience.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FF55E4AE252D3107006F378B /* DarkAmbience.mp3 */; };
-		FF55E4B7252D3917006F378B /* example.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = FF55E4B5252D3678006F378B /* example.mp4 */; };
 		FF882D62252BFAB500E861A4 /* GraveyardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */; };
 		FF882D65252BFC1700E861A4 /* ScoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D64252BFC1700E861A4 /* ScoreRequest.swift */; };
 		FF882D70252C96D200E861A4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D6F252C96D200E861A4 /* SettingsViewController.swift */; };
@@ -36,21 +40,25 @@
 /* Begin PBXFileReference section */
 		8FB21D771E13C34900B3E330 /* AR_Hunt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AR_Hunt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FB21D7A1E13C34900B3E330 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8FB21D7C1E13C34900B3E330 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8FB21D7F1E13C34900B3E330 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8FB21D811E13C34900B3E330 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FB21D841E13C34900B3E330 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FB21D861E13C34900B3E330 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8FB21D8C1E13C35700B3E330 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		8FB21D8E1E13C39F00B3E330 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8FB21D941E13DEA200B3E330 /* Fireball.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Fireball.scnp; sourceTree = "<group>"; };
 		8FB21D951E13DEA200B3E330 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		8FB21D9C1E164DE500B3E330 /* ARItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARItem.swift; sourceTree = "<group>"; };
 		8FB21D9E1E164F3B00B3E330 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		FF1A49B3252FC501001F6D95 /* scare.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = scare.MOV; sourceTree = "<group>"; };
+		FF1A49B7252FDD27001F6D95 /* Ghost.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Ghost.sks; sourceTree = "<group>"; };
+		FF1A49BA252FDDE1001F6D95 /* Ghost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ghost.swift; sourceTree = "<group>"; };
+		FF1A49BD252FDEB5001F6D95 /* GhostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostViewController.swift; sourceTree = "<group>"; };
+		FF1A49C3252FE167001F6D95 /* GhostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GhostViewController.xib; sourceTree = "<group>"; };
+		FF1A49C6252FE2B6001F6D95 /* ghost.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ghost.mp3; sourceTree = "<group>"; };
+		FF1A49C9252FE344001F6D95 /* scream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = scream.mp3; sourceTree = "<group>"; };
 		FF366540252A288000B84789 /* MonsterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterRequest.swift; sourceTree = "<group>"; };
 		FF366543252A288600B84789 /* Monster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Monster.swift; sourceTree = "<group>"; };
 		FF55E4AE252D3107006F378B /* DarkAmbience.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DarkAmbience.mp3; sourceTree = "<group>"; };
-		FF55E4B5252D3678006F378B /* example.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example.mp4; sourceTree = "<group>"; };
 		FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveyardViewController.swift; sourceTree = "<group>"; };
 		FF882D64252BFC1700E861A4 /* ScoreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRequest.swift; sourceTree = "<group>"; };
 		FF882D6F252C96D200E861A4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +110,6 @@
 				FF882D69252BFC4600E861A4 /* Models */,
 				FF882D67252BFC2100E861A4 /* Requests */,
 				FF882D6B252C012A00E861A4 /* ViewControllers */,
-				8FB21D8C1E13C35700B3E330 /* art.scnassets */,
 				8FB21D811E13C34900B3E330 /* Assets.xcassets */,
 				8FB21D941E13DEA200B3E330 /* Fireball.scnp */,
 				8FB21D951E13DEA200B3E330 /* spark.png */,
@@ -114,7 +121,9 @@
 		FF55E4AD252D30D5006F378B /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				FF55E4B5252D3678006F378B /* example.mp4 */,
+				FF1A49C9252FE344001F6D95 /* scream.mp3 */,
+				FF1A49C6252FE2B6001F6D95 /* ghost.mp3 */,
+				FF1A49B3252FC501001F6D95 /* scare.MOV */,
 				FF55E4AE252D3107006F378B /* DarkAmbience.mp3 */,
 			);
 			path = Sounds;
@@ -146,8 +155,11 @@
 			children = (
 				FF882D6F252C96D200E861A4 /* SettingsViewController.swift */,
 				8FB21D8E1E13C39F00B3E330 /* MapViewController.swift */,
-				8FB21D7C1E13C34900B3E330 /* ViewController.swift */,
 				FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */,
+				FF1A49B7252FDD27001F6D95 /* Ghost.sks */,
+				FF1A49BA252FDDE1001F6D95 /* Ghost.swift */,
+				FF1A49BD252FDEB5001F6D95 /* GhostViewController.swift */,
+				FF1A49C3252FE167001F6D95 /* GhostViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -231,13 +243,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FB21D851E13C34900B3E330 /* LaunchScreen.storyboard in Resources */,
+				FF1A49B4252FC501001F6D95 /* scare.MOV in Resources */,
 				8FB21D971E13DEA200B3E330 /* spark.png in Resources */,
-				8FB21D8D1E13C35700B3E330 /* art.scnassets in Resources */,
+				FF1A49C4252FE167001F6D95 /* GhostViewController.xib in Resources */,
+				FF1A49C7252FE2B6001F6D95 /* ghost.mp3 in Resources */,
 				8FB21D821E13C34900B3E330 /* Assets.xcassets in Resources */,
+				FF1A49CA252FE344001F6D95 /* scream.mp3 in Resources */,
 				FF55E4AF252D3107006F378B /* DarkAmbience.mp3 in Resources */,
 				8FB21D801E13C34900B3E330 /* Main.storyboard in Resources */,
-				FF55E4B7252D3917006F378B /* example.mp4 in Resources */,
 				8FB21D961E13DEA200B3E330 /* Fireball.scnp in Resources */,
+				FF1A49B8252FDD27001F6D95 /* Ghost.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,10 +264,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF366541252A288000B84789 /* MonsterRequest.swift in Sources */,
-				8FB21D7D1E13C34900B3E330 /* ViewController.swift in Sources */,
 				FFD2C980252C9C580062A2AE /* UserRequest.swift in Sources */,
+				FF1A49BB252FDDE1001F6D95 /* Ghost.swift in Sources */,
 				8FB21D9F1E164F3B00B3E330 /* MapAnnotation.swift in Sources */,
 				FF882D70252C96D200E861A4 /* SettingsViewController.swift in Sources */,
+				FF1A49BE252FDEB5001F6D95 /* GhostViewController.swift in Sources */,
 				FF366544252A288600B84789 /* Monster.swift in Sources */,
 				FF882D62252BFAB500E861A4 /* GraveyardViewController.swift in Sources */,
 				FFD2C98B252CCA260062A2AE /* UserHelper.swift in Sources */,

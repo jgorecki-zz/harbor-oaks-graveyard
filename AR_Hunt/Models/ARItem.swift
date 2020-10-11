@@ -28,4 +28,6 @@ struct ARItem {
   let itemDescription: String
   let location: CLLocation
   var itemNode: SCNNode?
+  var score:Int?
+  var image:String?
 }

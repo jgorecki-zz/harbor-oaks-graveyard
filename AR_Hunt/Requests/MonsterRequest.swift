@@ -18,14 +18,14 @@ init(location:CLLocation!, completion:@escaping (Any)->Void){
     
   super.init()
   
-  let coordinates:CLLocationCoordinate2D = location.coordinate
-  let latitude:Double = coordinates.latitude
-  let longitude:Double = coordinates.longitude
+//  let coordinates:CLLocationCoordinate2D = location.coordinate
+//  let latitude:Double = coordinates.latitude
+//  let longitude:Double = coordinates.longitude
   let keychain:KeychainSwift = KeychainSwift()
   let username:String = keychain.get("username")!
   let apikey:String = keychain.get("apikey")!
 
-  let urlString:String = "http://127.0.0.1:8000/api/v1/monster/"
+  let urlString:String = "https://harbor-oaks-graveyard-cms.herokuapp.com/api/v1/monster/"
 
   let redirect:Redirector = Redirector(behavior: .follow)
 
@@ -34,7 +34,7 @@ init(location:CLLocation!, completion:@escaping (Any)->Void){
   let parameters:Parameters = [:]
 
   let headers:HTTPHeaders = [
-    "Authorization": "ApiKey \(username):\(apikey)",
+//    "Authorization": "ApiKey \(username):\(apikey)",
 //    "Content-Type": "application/json",
 //    "Accept": "application/json"
   ]
