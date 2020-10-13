@@ -9,10 +9,15 @@
 import Foundation
 import KeychainSwift
 
+protocol UserHelperDelegate: AnyObject {
+    func userIsLoaded()
+}
+
 class UserHelper:NSObject {
   
   var username_check:String?
   var apikey_check:String?
+  weak var delegate:UserHelperDelegate?
   
   override init() {
       
@@ -46,12 +51,15 @@ class UserHelper:NSObject {
         keychain.set(password, forKey: "password")
         
         print(keychain.allKeys)
+
+        self.delegate?.userIsLoaded()
         
       }
       
     }else{
       
       print("I already have a user")
+      self.delegate?.userIsLoaded()
     
     }
     

@@ -15,6 +15,7 @@ class GhostViewController: UIViewController, ARSKViewDelegate {
       @IBOutlet var sceneView: ARSKView!
     
       var ghost:ARItem!
+  var texture:SKTexture?
       
       override func viewDidLoad() {
           
@@ -29,6 +30,15 @@ class GhostViewController: UIViewController, ARSKViewDelegate {
           sceneView.showsFPS = true
           sceneView.showsNodeCount = true
           
+        do{
+          let url = URL(string: ghost.image!) //NSURL(string: ghost.image!)
+          let data = try Data(contentsOf: url!)
+          let image = UIImage(data: data)
+          texture = SKTexture(image: image!)
+        }catch let error {
+          print(error)
+        }
+        
           let scene = Ghost(size: sceneView.bounds.size)
           scene.scaleMode = .resizeFill
           scene.item = ghost
@@ -69,7 +79,8 @@ class GhostViewController: UIViewController, ARSKViewDelegate {
 //          let ghostId = randomInt(min: 1, max: 6)
           
 //          let node = SKSpriteNode(imageNamed: "ghost\(ghostId)")
-        let node = SKSpriteNode(imageNamed: "ghost1")
+//        let node = SKSpriteNode(imageNamed: "ghost1")
+        let node = SKSpriteNode(texture: texture)
         node.name = "ghost"
         return node
         

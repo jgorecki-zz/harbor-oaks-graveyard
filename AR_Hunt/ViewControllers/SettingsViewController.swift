@@ -8,8 +8,6 @@
 
 import UIKit
 import KeychainSwift
-import AVKit
-import AVFoundation
 
 class SettingsViewController: UIViewController, UITextInputDelegate {
 
@@ -17,9 +15,7 @@ class SettingsViewController: UIViewController, UITextInputDelegate {
   @IBOutlet weak var passwordLabel: UITextField!
   
   let keychain:KeychainSwift = KeychainSwift()
-  
-  var playerViewController:AVPlayerViewController!
-  
+    
   override func viewDidLoad() {
     
     super.viewDidLoad()
@@ -57,36 +53,6 @@ class SettingsViewController: UIViewController, UITextInputDelegate {
       
     }
     
-  }
-  
-  @IBAction func jumpScareTest(_ sender: Any) {
-  
-    let video = Bundle.main.path(forResource: "scare", ofType: "MOV")!
-    print(video)
-    let videoURL = URL(fileURLWithPath: video)
-    let player = AVPlayer(url: videoURL)
-    
-    playerViewController = AVPlayerViewController()
-    playerViewController.player = player
-    playerViewController.showsPlaybackControls = false
-    
-    self.present(playerViewController, animated: false) {
-      self.playerViewController.player!.play()
-    }
-    
-    NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
-
-    
-  }
-  
-  @objc func playerDidFinishPlaying(notification: NSNotification) {
-    
-    self.playerViewController.dismiss(animated: false, completion: nil)
-  
-  }
-  
-  deinit {
-    NotificationCenter.default.removeObserver(self)
   }
   
   @IBAction func didPressRecreate(_ sender: Any) {

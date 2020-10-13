@@ -34,7 +34,7 @@ init(location:CLLocation!, completion:@escaping (Any)->Void){
   let parameters:Parameters = [:]
 
   let headers:HTTPHeaders = [
-//    "Authorization": "ApiKey \(username):\(apikey)",
+    "Authorization": "ApiKey \(username):\(apikey)",
 //    "Content-Type": "application/json",
 //    "Accept": "application/json"
   ]

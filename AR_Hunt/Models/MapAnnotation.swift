@@ -34,7 +34,7 @@ class MapAnnotation: NSObject, MKAnnotation {
     self.coordinate = location
     self.item = item
     self.title = item.itemDescription
-    self.image = UIImage(named: "spark.png")!
+    self.image = UIImage(named: "annotation")!
     super.init()
   }
 }

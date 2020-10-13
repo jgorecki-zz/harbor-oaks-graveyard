@@ -31,6 +31,10 @@
 		FF882D62252BFAB500E861A4 /* GraveyardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */; };
 		FF882D65252BFC1700E861A4 /* ScoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D64252BFC1700E861A4 /* ScoreRequest.swift */; };
 		FF882D70252C96D200E861A4 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF882D6F252C96D200E861A4 /* SettingsViewController.swift */; };
+		FF8C93E52535E8F60062B2B5 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8C93E42535E8F60062B2B5 /* Random.swift */; };
+		FF8C93E82535E9660062B2B5 /* RandomRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8C93E72535E9660062B2B5 /* RandomRequest.swift */; };
+		FF8C93EC2535F8EA0062B2B5 /* AppCenterCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = FF8C93EB2535F8EA0062B2B5 /* AppCenterCrashes */; };
+		FF8C93EE2535F8EA0062B2B5 /* AppCenterAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FF8C93ED2535F8EA0062B2B5 /* AppCenterAnalytics */; };
 		FFD2C980252C9C580062A2AE /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2C97F252C9C580062A2AE /* UserRequest.swift */; };
 		FFD2C984252CA3120062A2AE /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFD2C983252CA3120062A2AE /* KeychainSwift */; };
 		FFD2C987252CB15D0062A2AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2C986252CB15D0062A2AE /* User.swift */; };
@@ -62,6 +66,8 @@
 		FF882D61252BFAB500E861A4 /* GraveyardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveyardViewController.swift; sourceTree = "<group>"; };
 		FF882D64252BFC1700E861A4 /* ScoreRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreRequest.swift; sourceTree = "<group>"; };
 		FF882D6F252C96D200E861A4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FF8C93E42535E8F60062B2B5 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		FF8C93E72535E9660062B2B5 /* RandomRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRequest.swift; sourceTree = "<group>"; };
 		FFD2C97F252C9C580062A2AE /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		FFD2C986252CB15D0062A2AE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFD2C98A252CCA260062A2AE /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
@@ -75,6 +81,8 @@
 				FFD2C984252CA3120062A2AE /* KeychainSwift in Frameworks */,
 				FF36653E252A27F100B84789 /* Kingfisher in Frameworks */,
 				FF36653A252A278100B84789 /* Alamofire in Frameworks */,
+				FF8C93EE2535F8EA0062B2B5 /* AppCenterAnalytics in Frameworks */,
+				FF8C93EC2535F8EA0062B2B5 /* AppCenterCrashes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +143,7 @@
 				FF366540252A288000B84789 /* MonsterRequest.swift */,
 				FFD2C97F252C9C580062A2AE /* UserRequest.swift */,
 				FF882D64252BFC1700E861A4 /* ScoreRequest.swift */,
+				FF8C93E72535E9660062B2B5 /* RandomRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -146,6 +155,7 @@
 				8FB21D9C1E164DE500B3E330 /* ARItem.swift */,
 				FF366543252A288600B84789 /* Monster.swift */,
 				FFD2C986252CB15D0062A2AE /* User.swift */,
+				FF8C93E42535E8F60062B2B5 /* Random.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,6 +202,8 @@
 				FF366539252A278100B84789 /* Alamofire */,
 				FF36653D252A27F100B84789 /* Kingfisher */,
 				FFD2C983252CA3120062A2AE /* KeychainSwift */,
+				FF8C93EB2535F8EA0062B2B5 /* AppCenterCrashes */,
+				FF8C93ED2535F8EA0062B2B5 /* AppCenterAnalytics */,
 			);
 			productName = AR_Hunt;
 			productReference = 8FB21D771E13C34900B3E330 /* AR_Hunt.app */;
@@ -227,6 +239,7 @@
 				FF366538252A278100B84789 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				FF36653C252A27F100B84789 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				FFD2C982252CA3120062A2AE /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				FF8C93EA2535F8EA0062B2B5 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */,
 			);
 			productRefGroup = 8FB21D781E13C34900B3E330 /* Products */;
 			projectDirPath = "";
@@ -265,11 +278,13 @@
 			files = (
 				FF366541252A288000B84789 /* MonsterRequest.swift in Sources */,
 				FFD2C980252C9C580062A2AE /* UserRequest.swift in Sources */,
+				FF8C93E52535E8F60062B2B5 /* Random.swift in Sources */,
 				FF1A49BB252FDDE1001F6D95 /* Ghost.swift in Sources */,
 				8FB21D9F1E164F3B00B3E330 /* MapAnnotation.swift in Sources */,
 				FF882D70252C96D200E861A4 /* SettingsViewController.swift in Sources */,
 				FF1A49BE252FDEB5001F6D95 /* GhostViewController.swift in Sources */,
 				FF366544252A288600B84789 /* Monster.swift in Sources */,
+				FF8C93E82535E9660062B2B5 /* RandomRequest.swift in Sources */,
 				FF882D62252BFAB500E861A4 /* GraveyardViewController.swift in Sources */,
 				FFD2C98B252CCA260062A2AE /* UserHelper.swift in Sources */,
 				8FB21D9D1E164DE500B3E330 /* ARItem.swift in Sources */,
@@ -488,6 +503,14 @@
 				minimumVersion = 5.15.5;
 			};
 		};
+		FF8C93EA2535F8EA0062B2B5 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/microsoft/appcenter-sdk-apple.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.3.4;
+			};
+		};
 		FFD2C982252CA3120062A2AE /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
@@ -508,6 +531,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF36653C252A27F100B84789 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		FF8C93EB2535F8EA0062B2B5 /* AppCenterCrashes */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF8C93EA2535F8EA0062B2B5 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
+			productName = AppCenterCrashes;
+		};
+		FF8C93ED2535F8EA0062B2B5 /* AppCenterAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF8C93EA2535F8EA0062B2B5 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
+			productName = AppCenterAnalytics;
 		};
 		FFD2C983252CA3120062A2AE /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -21,6 +21,10 @@
  */
 
 import UIKit
+import KeychainSwift
+import AppCenter
+import AppCenterAnalytics
+import AppCenterCrashes
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,9 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-    let userhelper:UserHelper = UserHelper()
-    userhelper.create()
+    
+//    let keychain = KeychainSwift()
+//    keychain.clear()
     
     UITabBar.appearance().barTintColor = .black
     
@@ -47,6 +51,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UIButton.appearance().tintColor = .darkGray
     UIButton.appearance().setTitleColor(.darkText, for: .normal)
     UIButton.appearance().setBackgroundImage(image, for: .normal)
+    
+    MSAppCenter.start("77f58485-e03d-44a9-af85-505a667191d6", withServices:[
+      MSAnalytics.self,
+      MSCrashes.self
+    ])
     
     return true
   }

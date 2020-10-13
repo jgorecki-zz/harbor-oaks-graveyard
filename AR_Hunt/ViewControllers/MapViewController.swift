@@ -10,8 +10,9 @@ import UIKit
 import MapKit
 import CoreLocation
 import AVFoundation
+import AVKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, UserHelperDelegate {
 
   @IBOutlet weak var mapView: MKMapView!
   
@@ -20,12 +21,19 @@ class MapViewController: UIViewController {
   var userLocation: CLLocation?
   var selectedAnnotation: MKAnnotation?
   var audioPlayer = AVAudioPlayer()
+  var playerViewController:AVPlayerViewController!
   var locked:Bool=false
+  var userExists:Bool=false
   
   override func viewDidLoad() {
     
     super.viewDidLoad()
-    mapView.userTrackingMode = MKUserTrackingMode.followWithHeading    
+    
+    let userhelper:UserHelper = UserHelper()
+    userhelper.delegate = self
+    userhelper.create()
+    
+    mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
     if CLLocationManager.authorizationStatus() == .notDetermined {
       locationManager.requestWhenInUseAuthorization()
     }
@@ -36,21 +44,18 @@ class MapViewController: UIViewController {
     playSoundTrack()
   }
   
-  func setup(userLocation:MKUserLocation){
-    
-    self.userLocation = userLocation.location
-    
-    if locked == false{
-    
+  func userIsLoaded() {
+    userExists = true
+  }
+  
+  func setup(){
+    if locked == false && userExists == true{
       loadMonsters()
       let scale: CLLocationDistance = 20
       let region = MKCoordinateRegion(center: self.userLocation!.coordinate, latitudinalMeters: scale, longitudinalMeters: scale)
       mapView.setRegion(region, animated: true)
-    
       locked = true
-      
     }
-    
   }
   
   func loadMonsters(){
@@ -86,24 +91,75 @@ class MapViewController: UIViewController {
       print(error)
     }
   }
+  
+  func jumpScareTest() {
+  
+    let _:RandomRequest = RandomRequest { [weak self] result in
+      
+      guard let weakSelf = self else { return }
+      
+      let random:Random = result as! Random
+      let videoURL = URL(string: random.url)
+      let player = AVPlayer(url: videoURL!)
+      
+      weakSelf.playerViewController = AVPlayerViewController()
+      weakSelf.playerViewController.player = player
+      weakSelf.playerViewController.showsPlaybackControls = false
+      
+      weakSelf.present((weakSelf.playerViewController)!, animated: false) {
+        weakSelf.playerViewController.player!.play()
+      }
+      
+    }
+    
+    NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+    
+  }
+  
+  @objc func playerDidFinishPlaying(notification: NSNotification) {
+    
+    self.playerViewController.dismiss(animated: false, completion: nil)
+  
+  }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
 }
 
+
+///////////
 // Map Kit View Controller Delegate Extensions
 extension MapViewController: MKMapViewDelegate {
   
   func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-    setup(userLocation: userLocation)
+    self.userLocation = userLocation.location
+    setup()
   }
   
   func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
     let coordinate = view.annotation!.coordinate
     if let userCoordinate = userLocation {
       if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 50 {
-        let viewController = GhostViewController.init()
-        let annotation:MapAnnotation = view.annotation as! MapAnnotation
-        viewController.ghost = annotation.item
-        self.present(viewController, animated: true, completion: nil)
         
+        let number = Int.random(in: 0..<10)
+        
+        print(number)
+        
+        if(number > 7){
+          
+          jumpScareTest()
+          
+        }else{
+        
+          let viewController = GhostViewController.init()
+          let annotation:MapAnnotation = view.annotation as! MapAnnotation
+          viewController.ghost = annotation.item
+          self.present(viewController, animated: true, completion: nil)
+        
+        }
+          
         let sound = Bundle.main.path(forResource: "ghost", ofType: "mp3")
         do {
           let audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
