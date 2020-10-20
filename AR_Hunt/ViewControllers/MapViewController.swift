@@ -118,7 +118,11 @@ class MapViewController: UIViewController, UserHelperDelegate {
   
   @objc func playerDidFinishPlaying(notification: NSNotification) {
     
-    self.playerViewController.dismiss(animated: false, completion: nil)
+    DispatchQueue.main.async{ [self] in
+    
+      self.playerViewController.dismiss(animated: false, completion: nil)
+      
+    }
   
   }
   
