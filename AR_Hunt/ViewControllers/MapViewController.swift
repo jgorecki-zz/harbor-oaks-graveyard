@@ -135,19 +135,21 @@ extension MapViewController: MKMapViewDelegate {
   
   func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
     self.userLocation = userLocation.location
-    setup()
+    if self.userLocation != nil{
+      setup()
+    }
   }
   
   func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
     let coordinate = view.annotation!.coordinate
     if let userCoordinate = userLocation {
-      if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 50 {
+      if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 20 {
         
         let number = Int.random(in: 0..<10)
         
         print(number)
         
-        if(number > 7){
+        if(number > 6){
           
           jumpScareTest()
           
