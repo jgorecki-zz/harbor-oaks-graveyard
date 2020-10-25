@@ -85,7 +85,25 @@ class GraveyardViewController: UIViewController {
     cameraLayer.frame = self.view.bounds
     self.view.layer.insertSublayer(cameraLayer, at: 0)
     self.cameraLayer = cameraLayer
+
     
+  }
+  
+  override func viewDidLayoutSubviews() {
+      self.configureVideoOrientation()
+  }
+
+  private func configureVideoOrientation() {
+      if let previewLayer = self.cameraLayer,
+          let connection = previewLayer.connection {
+          let orientation = UIDevice.current.orientation
+
+          if connection.isVideoOrientationSupported,
+              let videoOrientation = AVCaptureVideoOrientation(rawValue: orientation.rawValue) {
+              previewLayer.frame = self.view.bounds
+              connection.videoOrientation = videoOrientation
+          }
+      }
   }
 
 }

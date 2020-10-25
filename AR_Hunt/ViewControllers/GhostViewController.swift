@@ -27,8 +27,8 @@ class GhostViewController: UIViewController, ARSKViewDelegate {
           sceneView.delegate = self
           
           // Show statistics such as fps and node count
-          sceneView.showsFPS = true
-          sceneView.showsNodeCount = true
+          sceneView.showsFPS = false
+          sceneView.showsNodeCount = false
           
         do{
           let url = URL(string: ghost.image!) //NSURL(string: ghost.image!)
@@ -48,7 +48,9 @@ class GhostViewController: UIViewController, ARSKViewDelegate {
       
       override func viewWillAppear(_ animated: Bool) {
           super.viewWillAppear(animated)
-          
+            
+        NotificationCenter.default.addObserver(self, selector: #selector(playerCollectedGhost), name: NSNotification.Name(rawValue: "playerCollectedGhost"), object: nil)
+        
           // Create a session configuration
           let configuration = ARWorldTrackingConfiguration()
           //configuration.planeDetection = .horizontal
@@ -100,4 +102,19 @@ class GhostViewController: UIViewController, ARSKViewDelegate {
           // Reset tracking and/or remove existing anchors if consistent tracking is required
           
       }
+  
+  deinit {
+    NotificationCenter.default.removeObserver(self)
+  }
+  
+  @objc func playerCollectedGhost(notification: NSNotification) {
+    
+    DispatchQueue.main.async{ [self] in
+    
+      self.dismiss(animated: false, completion: nil)
+      
+    }
+  
+  }
+  
   }

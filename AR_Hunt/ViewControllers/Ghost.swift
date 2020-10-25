@@ -30,12 +30,14 @@ class Ghost : SKScene{
           ghostsLabel.fontName = "DevanagariSangamMN-Bold"
           ghostsLabel.color = .white
           ghostsLabel.position = CGPoint(x: 40, y: 50)
+          ghostsLabel.isHidden = true
           addChild(ghostsLabel)
           
           numberOfGhostsLabel.fontSize = 30
           numberOfGhostsLabel.fontName = "DevanagariSangamMN-Bold"
           numberOfGhostsLabel.color = .white
           numberOfGhostsLabel.position = CGPoint(x: 40, y: 10)
+          numberOfGhostsLabel.isHidden = true
           addChild(numberOfGhostsLabel)
       }
       
@@ -117,7 +119,11 @@ class Ghost : SKScene{
                 let _:ScoreRequest = ScoreRequest(score:item?.score) {[weak self] results in
                     print("request sent")
                 }
-              
+                
+                // Close the view, remove from map.
+//                NSNotification.Name(rawValue: "playerCollectedGhost")
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "playerCollectedGhost"), object: self.item)
+                
               }
               
           }

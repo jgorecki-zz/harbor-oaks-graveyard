@@ -33,15 +33,24 @@ class MapViewController: UIViewController, UserHelperDelegate {
     userhelper.delegate = self
     userhelper.create()
     
+    mapView.showsCompass = true
+    mapView.isScrollEnabled = false
+    mapView.isRotateEnabled = false
+    
     mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
     if CLLocationManager.authorizationStatus() == .notDetermined {
       locationManager.requestWhenInUseAuthorization()
     }
+    
+    
+    
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(true)
+    
     playSoundTrack()
+
   }
   
   func userIsLoaded() {
@@ -145,9 +154,12 @@ extension MapViewController: MKMapViewDelegate {
   }
   
   func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    
     let coordinate = view.annotation!.coordinate
+    
     if let userCoordinate = userLocation {
-      if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 20 {
+    
+      if userCoordinate.distance(from: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)) < 10 {
         
         let number = Int.random(in: 0..<10)
         
@@ -158,11 +170,19 @@ extension MapViewController: MKMapViewDelegate {
         
         }else{
         
-          let viewController = GhostViewController.init()
-          let annotation:MapAnnotation = view.annotation as! MapAnnotation
-          viewController.ghost = annotation.item
-          self.present(viewController, animated: true, completion: nil)
-        
+          if (view.annotation is MKUserLocation) {
+          
+            print("its a user annotation")
+            
+          }else{
+            
+            let viewController = GhostViewController.init()
+            let annotation:MapAnnotation = view.annotation as! MapAnnotation
+            viewController.ghost = annotation.item
+            self.present(viewController, animated: true, completion: nil)
+            
+          }
+    
         }
           
         let sound = Bundle.main.path(forResource: "ghost", ofType: "mp3")
