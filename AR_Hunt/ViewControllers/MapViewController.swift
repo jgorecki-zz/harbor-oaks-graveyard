@@ -92,7 +92,7 @@ class MapViewController: UIViewController, UserHelperDelegate {
     }
   }
   
-  func jumpScareTest() {
+  func jumpScare() {
   
     let _:RandomRequest = RandomRequest { [weak self] result in
       
@@ -153,10 +153,9 @@ extension MapViewController: MKMapViewDelegate {
         
         print(number)
         
-        if(number > 6){
-          
-          jumpScareTest()
-          
+        if(number > 8){
+          jumpScare()
+        
         }else{
         
           let viewController = GhostViewController.init()

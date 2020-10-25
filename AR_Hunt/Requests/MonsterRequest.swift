@@ -18,9 +18,6 @@ init(location:CLLocation!, completion:@escaping (Any)->Void){
     
   super.init()
   
-//  let coordinates:CLLocationCoordinate2D = location.coordinate
-//  let latitude:Double = coordinates.latitude
-//  let longitude:Double = coordinates.longitude
   let keychain:KeychainSwift = KeychainSwift()
   let username:String = keychain.get("username")!
   let apikey:String = keychain.get("apikey")!
@@ -29,8 +26,6 @@ init(location:CLLocation!, completion:@escaping (Any)->Void){
 
   let redirect:Redirector = Redirector(behavior: .follow)
 
-  //[{"key":"Authorization","value":"ApiKey jgorecki:sdnxcnsfgnfgnfngsfdgmhg","description":"","enabled":true}]
-//  let parameters:Parameters = ["latitude":latitude, "longitude":longitude]
   let parameters:Parameters = [:]
 
   let headers:HTTPHeaders = [

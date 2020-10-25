@@ -45,12 +45,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     context?.setFillColor(color.cgColor)
     context?.fill(rect)
 
-    let image = UIGraphicsGetImageFromCurrentImageContext()
+    var image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     
-    UIButton.appearance().tintColor = .darkGray
-    UIButton.appearance().setTitleColor(.darkText, for: .normal)
-    UIButton.appearance().setBackgroundImage(image, for: .normal)
+//    UIButton.appearance().tintColor = .darkGray
+//    UIButton.appearance().setTitleColor(.darkText, for: .normal)
+//    UIButton.appearance().setBackgroundImage(image, for: .normal)
     
     MSAppCenter.start("77f58485-e03d-44a9-af85-505a667191d6", withServices:[
       MSAnalytics.self,

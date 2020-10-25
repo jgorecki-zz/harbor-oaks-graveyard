@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>Needed for AR</string>
+	<string>Needed for AR and Videos</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Needed for AR</string>
 	<key>UILaunchStoryboardName</key>
@@ -42,5 +42,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Needed for AR and Videos</string>
 </dict>
 </plist>

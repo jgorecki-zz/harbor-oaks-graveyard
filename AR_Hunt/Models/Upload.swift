@@ -14,10 +14,10 @@ public struct Upload: Codable{
     
     public struct Object : Codable{
         
-      public let message:String
-      public let success:Bool
-      public let url:String
-      public let username:String
+//      public let message:String
+//      public let success:Bool
+      public let upload:String
+      public let user:String
         
     }
     

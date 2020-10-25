@@ -22,7 +22,7 @@ init(completion:@escaping (Any)->Void){
   let username:String = keychain.get("username")!
   let apikey:String = keychain.get("apikey")!
 
-  let urlString:String = "https://harbor-oaks-graveyard-cms.herokuapp.com/api/v1/upload/random/"
+  let urlString:String = "https://harbor-oaks-graveyard-cms.herokuapp.com/api/v1/upload/"
 
   let redirect:Redirector = Redirector(behavior: .follow)
 

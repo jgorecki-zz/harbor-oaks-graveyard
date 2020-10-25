@@ -42,10 +42,15 @@
 		FF8C93E82535E9660062B2B5 /* RandomRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8C93E72535E9660062B2B5 /* RandomRequest.swift */; };
 		FF8C93EC2535F8EA0062B2B5 /* AppCenterCrashes in Frameworks */ = {isa = PBXBuildFile; productRef = FF8C93EB2535F8EA0062B2B5 /* AppCenterCrashes */; };
 		FF8C93EE2535F8EA0062B2B5 /* AppCenterAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FF8C93ED2535F8EA0062B2B5 /* AppCenterAnalytics */; };
+		FFA32F902540FB5900803A0A /* UsernameRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA32F8F2540FB5900803A0A /* UsernameRequest.swift */; };
+		FFA32F942540FCBE00803A0A /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = FFA32F932540FCBE00803A0A /* JGProgressHUD */; };
+		FFA32F9B2541086C00803A0A /* HudHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA32F9A2541086C00803A0A /* HudHelper.swift */; };
 		FFD2C980252C9C580062A2AE /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2C97F252C9C580062A2AE /* UserRequest.swift */; };
 		FFD2C984252CA3120062A2AE /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FFD2C983252CA3120062A2AE /* KeychainSwift */; };
 		FFD2C987252CB15D0062A2AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2C986252CB15D0062A2AE /* User.swift */; };
 		FFD2C98B252CCA260062A2AE /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD2C98A252CCA260062A2AE /* UserHelper.swift */; };
+		FFEC96102544E50E00C5B23F /* VideoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEC960F2544E50E00C5B23F /* VideoPicker.swift */; };
+		FFEC96132545D10400C5B23F /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEC96122545D10400C5B23F /* ScoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,9 +87,13 @@
 		FF882D6F252C96D200E861A4 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FF8C93E42535E8F60062B2B5 /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		FF8C93E72535E9660062B2B5 /* RandomRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomRequest.swift; sourceTree = "<group>"; };
+		FFA32F8F2540FB5900803A0A /* UsernameRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameRequest.swift; sourceTree = "<group>"; };
+		FFA32F9A2541086C00803A0A /* HudHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudHelper.swift; sourceTree = "<group>"; };
 		FFD2C97F252C9C580062A2AE /* UserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		FFD2C986252CB15D0062A2AE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FFD2C98A252CCA260062A2AE /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
+		FFEC960F2544E50E00C5B23F /* VideoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPicker.swift; sourceTree = "<group>"; };
+		FFEC96122545D10400C5B23F /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +105,7 @@
 				FF36653E252A27F100B84789 /* Kingfisher in Frameworks */,
 				FF36653A252A278100B84789 /* Alamofire in Frameworks */,
 				FF8C93EE2535F8EA0062B2B5 /* AppCenterAnalytics in Frameworks */,
+				FFA32F942540FCBE00803A0A /* JGProgressHUD in Frameworks */,
 				FF8C93EC2535F8EA0062B2B5 /* AppCenterCrashes in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,6 +177,7 @@
 				FF882D64252BFC1700E861A4 /* ScoreRequest.swift */,
 				FF8C93E72535E9660062B2B5 /* RandomRequest.swift */,
 				FF1F4F68253F1D1500B6E86E /* UploadRequest.swift */,
+				FFA32F8F2540FB5900803A0A /* UsernameRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -195,6 +206,7 @@
 				FF1A49BD252FDEB5001F6D95 /* GhostViewController.swift */,
 				FF1A49C3252FE167001F6D95 /* GhostViewController.xib */,
 				FF1F4F4E253F158F00B6E86E /* UploadViewController.swift */,
+				FFEC96122545D10400C5B23F /* ScoreViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -207,6 +219,8 @@
 				FF1F4F54253F18FD00B6E86E /* Cellable.swift */,
 				FF1F4F51253F18E200B6E86E /* BaseDataSource.swift */,
 				FFD2C98A252CCA260062A2AE /* UserHelper.swift */,
+				FFA32F9A2541086C00803A0A /* HudHelper.swift */,
+				FFEC960F2544E50E00C5B23F /* VideoPicker.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -233,6 +247,7 @@
 				FFD2C983252CA3120062A2AE /* KeychainSwift */,
 				FF8C93EB2535F8EA0062B2B5 /* AppCenterCrashes */,
 				FF8C93ED2535F8EA0062B2B5 /* AppCenterAnalytics */,
+				FFA32F932540FCBE00803A0A /* JGProgressHUD */,
 			);
 			productName = AR_Hunt;
 			productReference = 8FB21D771E13C34900B3E330 /* AR_Hunt.app */;
@@ -269,6 +284,7 @@
 				FF36653C252A27F100B84789 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				FFD2C982252CA3120062A2AE /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				FF8C93EA2535F8EA0062B2B5 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */,
+				FFA32F922540FCBE00803A0A /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 8FB21D781E13C34900B3E330 /* Products */;
 			projectDirPath = "";
@@ -307,8 +323,11 @@
 				FF366541252A288000B84789 /* MonsterRequest.swift in Sources */,
 				FF1F4F4F253F158F00B6E86E /* UploadViewController.swift in Sources */,
 				FFD2C980252C9C580062A2AE /* UserRequest.swift in Sources */,
+				FFEC96102544E50E00C5B23F /* VideoPicker.swift in Sources */,
 				FF1F4F66253F1CBB00B6E86E /* Upload.swift in Sources */,
 				FF1F4F52253F18E200B6E86E /* BaseDataSource.swift in Sources */,
+				FFA32F9B2541086C00803A0A /* HudHelper.swift in Sources */,
+				FFEC96132545D10400C5B23F /* ScoreViewController.swift in Sources */,
 				FF1F4F5E253F1A4900B6E86E /* UploadTableViewCell.swift in Sources */,
 				FF8C93E52535E8F60062B2B5 /* Random.swift in Sources */,
 				FF1A49BB252FDDE1001F6D95 /* Ghost.swift in Sources */,
@@ -322,6 +341,7 @@
 				FF882D62252BFAB500E861A4 /* GraveyardViewController.swift in Sources */,
 				FFD2C98B252CCA260062A2AE /* UserHelper.swift in Sources */,
 				FF1F4F59253F193000B6E86E /* UIDevice+Extensions.swift in Sources */,
+				FFA32F902540FB5900803A0A /* UsernameRequest.swift in Sources */,
 				8FB21D9D1E164DE500B3E330 /* ARItem.swift in Sources */,
 				FFD2C987252CB15D0062A2AE /* User.swift in Sources */,
 				FF1F4F55253F18FD00B6E86E /* Cellable.swift in Sources */,
@@ -547,6 +567,14 @@
 				minimumVersion = 3.3.4;
 			};
 		};
+		FFA32F922540FCBE00803A0A /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
 		FFD2C982252CA3120062A2AE /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
@@ -577,6 +605,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FF8C93EA2535F8EA0062B2B5 /* XCRemoteSwiftPackageReference "appcenter-sdk-apple" */;
 			productName = AppCenterAnalytics;
+		};
+		FFA32F932540FCBE00803A0A /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FFA32F922540FCBE00803A0A /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 		FFD2C983252CA3120062A2AE /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;

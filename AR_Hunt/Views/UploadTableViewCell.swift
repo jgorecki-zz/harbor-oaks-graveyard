@@ -10,9 +10,16 @@ import UIKit
 
 class UploadTableViewCell: UITableViewCell, Cellable {
   
+  @IBOutlet weak var avatar: UIImageView!
+  @IBOutlet weak var mainLabel: UILabel!
+  
   func mapToObject(object: Any) {
-    
-  }
+   
+    let upload:Upload.Object = object as! Upload.Object
+
+      mainLabel.text = upload.user
+      
+    }
   
 
     override func awakeFromNib() {

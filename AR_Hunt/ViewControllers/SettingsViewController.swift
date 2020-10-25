@@ -8,8 +8,9 @@
 
 import UIKit
 import KeychainSwift
+import MessageUI
 
-class SettingsViewController: UIViewController, UITextInputDelegate {
+class SettingsViewController: UIViewController, UITextInputDelegate, MFMailComposeViewControllerDelegate {
 
   @IBOutlet weak var usernameLabel: UITextField!
   @IBOutlet weak var passwordLabel: UITextField!
@@ -43,17 +44,31 @@ class SettingsViewController: UIViewController, UITextInputDelegate {
     
     if (usernameLabel.text != nil) && (passwordLabel.text != nil){
     
-//    let _:UserRequest = UserRequest(username: usernameLabel.text, password: passwordLabel.text) { [weak self] response in
-//
-//        guard let strongSelf = self else {return}
-//
-//        strongSelf.mapFormToKeychain()
-//
-//      }
+    let _:UsernameRequest = UsernameRequest(username: usernameLabel.text, password: passwordLabel.text) { [weak self] response in
+
+        guard let strongSelf = self else {return}
+        
+      HudHelper.showSuccess(msg: "Updated")
+        strongSelf.mapFormToKeychain()
+
+      }
       
     }
     
   }
+  
+  @IBAction func didPressReport(_ sender: Any) {
+  
+    let mailComposeViewController = configuredMailComposeViewController()
+            if MFMailComposeViewController.canSendMail() {
+              self.present(mailComposeViewController, animated: true, completion: nil)
+            } else {
+                self.showSendMailErrorAlert()
+            }
+    
+  
+  }
+  
   
   @IBAction func didPressRecreate(_ sender: Any) {
     
@@ -83,4 +98,28 @@ class SettingsViewController: UIViewController, UITextInputDelegate {
    
   }
 
+  func configuredMailComposeViewController() -> MFMailComposeViewController {
+          let mailComposerVC = MFMailComposeViewController()
+          mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+
+          mailComposerVC.setToRecipients(["j@harbordev.com"])
+          mailComposerVC.setSubject("Sending you an in-app e-mail...")
+          mailComposerVC.setMessageBody("The Halloween app is ...", isHTML: false)
+
+          return mailComposerVC
+      }
+
+      func showSendMailErrorAlert() {
+          
+        HudHelper.showError(msg: "Your device can not send an email.")
+        
+      }
+
+      // MARK: MFMailComposeViewControllerDelegate
+
+      func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+        controller.dismiss(animated: true, completion: nil)
+
+      }
+  
 }
